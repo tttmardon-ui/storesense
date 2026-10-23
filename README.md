@@ -4,7 +4,7 @@
 
 > Store analytics from existing CCTV cameras: footfall, department heatmaps, empty-shelf alerts and service-time metrics, with daily AI reports in Telegram. Runs fully on-premise with Docker and Ollama.
 
-**[Открыть демо →](https://tttmardon-ui.github.io/storesense/)** (сгенерированные данные)
+**[Открыть демо →](https://tttmardon-ui.github.io/storesense/)** (сгенерированные данные) · **[Видео-презентация →](https://tttmardon-ui.github.io/storesense/storesense-video.mp4)**
 
 Сделано для сети детских магазинов Mittivoy (Ташкент).
 
