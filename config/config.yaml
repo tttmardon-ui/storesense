@@ -1,0 +1,80 @@
+# ─────────────────────────────────────────────────────────────
+#  StoreSense — настройки. Меняешь здесь, перезапускаешь:
+#     docker compose restart
+# ─────────────────────────────────────────────────────────────
+
+company: Mittivoy
+timezone: Asia/Tashkent
+
+# Язык AI-отчётов: ru или uz
+report_language: ru
+
+# Во сколько присылать ежедневный отчёт в Telegram (местное время)
+daily_report_time: "22:15"
+
+# Алерты
+alerts:
+  camera_offline_minutes: 10     # камера молчит дольше N минут → алерт
+  no_visitors_minutes: 60        # в рабочее время ни одного входа N минут → алерт
+  empty_shelf: true              # полка стала пустой → алерт
+
+branches:
+  - id: chilanzar
+    name: "Чиланзар (пилот)"
+    open: "10:00"
+    close: "22:00"
+    cameras:
+      - id: entrance
+        name: "Вход"
+        role: entrance           # считает вход/выход
+        rtsp: ""                 # rtsp://user:pass@192.168.1.64:554/Streaming/Channels/101
+      - id: hall
+        name: "Зал"
+        role: hall               # зоны + консультации
+        rtsp: ""
+      - id: shelves
+        name: "Полки"
+        role: shelves            # снимки полок для проверки пустых мест
+        rtsp: ""
+    # Зоны отделов. x, y, w, h — положение на схеме зала в процентах (0–100).
+    # Нужны только для красивой тепловой карты на дашборде.
+    zones:
+      - { id: newborn, name: "Новорождённые", x: 2,  y: 2,  w: 30, h: 44 }
+      - { id: girls,   name: "Девочки",       x: 34, y: 2,  w: 32, h: 44 }
+      - { id: boys,    name: "Мальчики",      x: 68, y: 2,  w: 30, h: 44 }
+      - { id: toys,    name: "Игрушки",       x: 2,  y: 50, w: 40, h: 46 }
+      - { id: shoes,   name: "Обувь",         x: 44, y: 50, w: 26, h: 46 }
+      - { id: school,  name: "Школа",         x: 72, y: 50, w: 26, h: 46 }
+    shelves:
+      - { id: nb-1,  zone: newborn, name: "Боди и слипы" }
+      - { id: nb-2,  zone: newborn, name: "Пелёнки" }
+      - { id: g-1,   zone: girls,   name: "Платья" }
+      - { id: g-2,   zone: girls,   name: "Футболки" }
+      - { id: b-1,   zone: boys,    name: "Джинсы" }
+      - { id: b-2,   zone: boys,    name: "Куртки" }
+      - { id: t-1,   zone: toys,    name: "Конструкторы" }
+      - { id: t-2,   zone: toys,    name: "Мягкие игрушки" }
+      - { id: s-1,   zone: shoes,   name: "Кроссовки" }
+      - { id: sc-1,  zone: school,  name: "Рюкзаки" }
+
+  - id: yunusabad
+    name: "Юнусабад"
+    open: "10:00"
+    close: "22:00"
+    cameras:
+      - { id: entrance, name: "Вход", role: entrance, rtsp: "" }
+      - { id: hall,     name: "Зал",  role: hall,     rtsp: "" }
+      - { id: shelves,  name: "Полки", role: shelves, rtsp: "" }
+    zones:
+      - { id: newborn, name: "Новорождённые", x: 2,  y: 2,  w: 46, h: 30 }
+      - { id: girls,   name: "Девочки",       x: 52, y: 2,  w: 46, h: 30 }
+      - { id: boys,    name: "Мальчики",      x: 52, y: 36, w: 46, h: 30 }
+      - { id: toys,    name: "Игрушки",       x: 2,  y: 36, w: 46, h: 60 }
+      - { id: shoes,   name: "Обувь",         x: 52, y: 70, w: 46, h: 26 }
+    shelves:
+      - { id: nb-1, zone: newborn, name: "Боди и слипы" }
+      - { id: g-1,  zone: girls,   name: "Платья" }
+      - { id: b-1,  zone: boys,    name: "Джинсы" }
+      - { id: t-1,  zone: toys,    name: "Конструкторы" }
+      - { id: t-2,  zone: toys,    name: "Куклы" }
+      - { id: s-1,  zone: shoes,   name: "Сандалии" }

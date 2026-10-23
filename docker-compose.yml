@@ -1,0 +1,77 @@
+# StoreSense — запуск всего одной командой:
+#     docker compose up -d --build
+# Дашборд: http://localhost:8080
+#
+# Режим задаётся в .env через COMPOSE_PROFILES:
+#   demo     — симулятор вместо камер (сейчас)
+#   cameras  — настоящий счётчик по камерам (следующий этап)
+
+x-common: &common
+  restart: unless-stopped            # сам поднимается после сбоя и перезагрузки ПК
+  env_file:
+    - path: .env
+      required: false               # работает и без .env, с настройками по умолчанию
+  logging:                           # логи не съедят диск
+    driver: json-file
+    options: { max-size: "10m", max-file: "3" }
+
+services:
+  api:
+    <<: *common
+    build: ./api
+    ports:
+      - "${DASHBOARD_PORT:-8080}:8000"
+    volumes:
+      - ./config:/config:ro
+      - ./data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health', timeout=4)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  reporter:
+    <<: *common
+    build: ./reporter
+    volumes:
+      - ./data:/data
+    environment:
+      API_URL: http://api:8000
+      OLLAMA_URL: http://ollama:11434
+    depends_on:
+      api: { condition: service_healthy }
+
+  ollama:
+    <<: *common
+    image: ollama/ollama:latest
+    volumes:
+      - ollama:/root/.ollama
+    # Если есть видеокарта NVIDIA — раскомментируй, отчёты будут генерироваться в разы быстрее:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices: [{ driver: nvidia, count: all, capabilities: [gpu] }]
+
+  simulator:
+    <<: *common
+    build: ./simulator
+    profiles: ["demo"]
+    environment:
+      API_URL: http://api:8000
+    depends_on:
+      api: { condition: service_healthy }
+
+  # counter:                         # следующий этап — подсчёт по настоящим камерам
+  #   <<: *common
+  #   build: ./counter
+  #   profiles: ["cameras"]
+  #   volumes:
+  #     - ./config:/config:ro
+  #   environment:
+  #     API_URL: http://api:8000
+  #   depends_on:
+  #     api: { condition: service_healthy }
+
+volumes:
+  ollama:

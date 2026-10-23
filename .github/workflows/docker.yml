@@ -1,0 +1,19 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [api, simulator, reporter]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Python syntax
+        run: python -m py_compile $(find ${{ matrix.service }} -name "*.py")
+      - name: Build image
+        run: docker build -t storesense-${{ matrix.service }} ./${{ matrix.service }}
