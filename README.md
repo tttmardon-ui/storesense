@@ -4,6 +4,8 @@
 
 > Store analytics from existing CCTV cameras: footfall, department heatmaps, empty-shelf alerts and service-time metrics, with daily AI reports in Telegram. Runs fully on-premise with Docker and Ollama.
 
+**[Открыть демо →](https://tttmardon-ui.github.io/storesense/)** (сгенерированные данные)
+
 Сделано для сети детских магазинов Mittivoy (Ташкент).
 
 ## Что умеет
@@ -38,7 +40,7 @@ cp .env.example .env
 docker compose up -d --build
 ```
 
-Через минуту открой **http://localhost:8080**. При первом запуске симулятор заполнит историю за 14 дней, а reporter скачает модель для Ollama (около 2 ГБ, один раз).
+Через минуту открой **http://localhost:8090**. При первом запуске симулятор заполнит историю за 14 дней, а reporter скачает модель для Ollama (около 2 ГБ, один раз).
 
 Всё поднимается автоматически после перезагрузки компьютера и после сбоев (`restart: unless-stopped`), логи ограничены по размеру.
 
@@ -66,7 +68,7 @@ docker compose exec reporter python reporter.py --once
 
 ```
 Камеры (RTSP) ─→ counter (YOLO + трекинг) ─┐      [следующий этап]
-                                            ├─→ api (Starlette + SQLite) ─→ дашборд :8080
+                                            ├─→ api (Starlette + SQLite) ─→ дашборд :8090
 симулятор (сейчас) ─────────────────────────┘          │
                                                        └─→ reporter ─→ Ollama ─→ Telegram
 ```

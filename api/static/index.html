@@ -17,6 +17,7 @@
   --ghost: #b9c2cd;
   --good: #0ca30c; --warn: #fab219; --serious: #ec835a; --crit: #d03b3b;
   --good-ink: #0a6e0a; --warn-ink: #8a5a00; --crit-ink: #b02a2a;
+  --zone-ink-lo: #142030; --zone-ink-hi: #ffffff;
   --seq-1: #cde2fb; --seq-2: #9ec5f4; --seq-3: #6da7ec; --seq-4: #3987e5; --seq-5: #256abf; --seq-6: #184f95;
   --f-display: "Unbounded", "Arial Black", system-ui, sans-serif;
   --f-body: "Onest", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -27,12 +28,14 @@
   --bg: #11161d; --panel: #18202a; --ink: #eef2f6; --ink-2: #b6c0cc; --ink-3: #8592a2;
   --line: #2a3542; --grid: #222c37; --accent: #3987e5; --accent-soft: #1d3150; --ghost: #4c5867;
   --good-ink: #4cc94c; --warn-ink: #fab219; --crit-ink: #ef7a7a;
+  --zone-ink-lo: #eef2f6; --zone-ink-hi: #0d1a2a;
   --seq-1: #1d3150; --seq-2: #184f95; --seq-3: #1c5cab; --seq-4: #2a78d6; --seq-5: #5598e7; --seq-6: #9ec5f4;
   color-scheme: dark; } }
 :root[data-theme="dark"] {
   --bg: #11161d; --panel: #18202a; --ink: #eef2f6; --ink-2: #b6c0cc; --ink-3: #8592a2;
   --line: #2a3542; --grid: #222c37; --accent: #3987e5; --accent-soft: #1d3150; --ghost: #4c5867;
   --good-ink: #4cc94c; --warn-ink: #fab219; --crit-ink: #ef7a7a;
+  --zone-ink-lo: #eef2f6; --zone-ink-hi: #0d1a2a;
   --seq-1: #1d3150; --seq-2: #184f95; --seq-3: #1c5cab; --seq-4: #2a78d6; --seq-5: #5598e7; --seq-6: #9ec5f4;
   color-scheme: dark; }
 
@@ -95,8 +98,8 @@ svg text { font-family: var(--f-mono); font-size: 11px; fill: var(--ink-3); }
 .zone .zn { font-weight: 600; font-size: 13px; line-height: 1.15; }
 .zone .zv { font-family: var(--f-display); font-size: 20px; font-weight: 500; letter-spacing: -.02em; }
 .zone .zm { font-size: 11px; font-family: var(--f-mono); opacity: .85; }
-.zone.dark-bg { color: #ffffff; }
-.zone.light-bg { color: #142030; }
+.zone.hi { color: var(--zone-ink-hi); }
+.zone.lo { color: var(--zone-ink-lo); }
 .scale { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-3); }
 .scale .bar { display: flex; height: 8px; flex: 0 0 120px; border-radius: 4px; overflow: hidden; }
 .scale .bar i { flex: 1; }
@@ -323,7 +326,7 @@ footer { color: var(--ink-3); font-size: 12px; padding-bottom: 28px; }
     d.zones.forEach(z => {
       const lvl = max === min ? 3 : 1 + Math.round((z.visits - min) / (max - min) * 5);
       const div = document.createElement("div");
-      div.className = "zone " + (lvl >= 4 ? "dark-bg" : "light-bg");
+      div.className = "zone " + (lvl >= 4 ? "hi" : "lo");
       Object.assign(div.style, { left: z.x + "%", top: z.y + "%", width: z.w + "%", height: z.h + "%", background: `var(--seq-${lvl})` });
       div.innerHTML = `<span class="zn"></span><span><span class="zv"></span><br><span class="zm"></span></span>`;
       div.querySelector(".zn").textContent = z.name;

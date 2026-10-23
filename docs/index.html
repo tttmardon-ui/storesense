@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="StoreSense — AI-аналитика магазина по камерам: посетители, горячие зоны, пустые полки, консультации. Демо на сгенерированных данных.">
+<title>StoreSense Mittivoy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>window.__DEMO__={"config": {"company": "Mittivoy", "timezone": "Asia/Tashkent", "report_language": "ru", "daily_report_time": "22:15", "alerts": {"camera_offline_minutes": 10, "no_visitors_minutes": 60, "empty_shelf": true}, "branches": [{"id": "chilanzar", "name": "Чиланзар (пилот)", "open": "10:00", "close": "22:00", "cameras": [{"id": "entrance", "name": "Вход", "role": "entrance"}, {"id": "hall", "name": "Зал", "role": "hall"}, {"id": "shelves", "name": "Полки", "role": "shelves"}], "zones": [{"id": "newborn", "name": "Новорождённые", "x": 2, "y": 2, "w": 30, "h": 44}, {"id": "girls", "name": "Девочки", "x": 34, "y": 2, "w": 32, "h": 44}, {"id": "boys", "name": "Мальчики", "x": 68, "y": 2, "w": 30, "h": 44}, {"id": "toys", "name": "Игрушки", "x": 2, "y": 50, "w": 40, "h": 46}, {"id": "shoes", "name": "Обувь", "x": 44, "y": 50, "w": 26, "h": 46}, {"id": "school", "name": "Школа", "x": 72, "y": 50, "w": 26, "h": 46}], "shelves": [{"id": "nb-1", "zone": "newborn", "name": "Боди и слипы"}, {"id": "nb-2", "zone": "newborn", "name": "Пелёнки"}, {"id": "g-1", "zone": "girls", "name": "Платья"}, {"id": "g-2", "zone": "girls", "name": "Футболки"}, {"id": "b-1", "zone": "boys", "name": "Джинсы"}, {"id": "b-2", "zone": "boys", "name": "Куртки"}, {"id": "t-1", "zone": "toys", "name": "Конструкторы"}, {"id": "t-2", "zone": "toys", "name": "Мягкие игрушки"}, {"id": "s-1", "zone": "shoes", "name": "Кроссовки"}, {"id": "sc-1", "zone": "school", "name": "Рюкзаки"}]}, {"id": "yunusabad", "name": "Юнусабад", "open": "10:00", "close": "22:00", "cameras": [{"id": "entrance", "name": "Вход", "role": "entrance"}, {"id": "hall", "name": "Зал", "role": "hall"}, {"id": "shelves", "name": "Полки", "role": "shelves"}], "zones": [{"id": "newborn", "name": "Новорождённые", "x": 2, "y": 2, "w": 46, "h": 30}, {"id": "girls", "name": "Девочки", "x": 52, "y": 2, "w": 46, "h": 30}, {"id": "boys", "name": "Мальчики", "x": 52, "y": 36, "w": 46, "h": 30}, {"id": "toys", "name": "Игрушки", "x": 2, "y": 36, "w": 46, "h": 60}, {"id": "shoes", "name": "Обувь", "x": 52, "y": 70, "w": 46, "h": 26}], "shelves": [{"id": "nb-1", "zone": "newborn", "name": "Боди и слипы"}, {"id": "g-1", "zone": "girls", "name": "Платья"}, {"id": "b-1", "zone": "boys", "name": "Джинсы"}, {"id": "t-1", "zone": "toys", "name": "Конструкторы"}, {"id": "t-2", "zone": "toys", "name": "Куклы"}, {"id": "s-1", "zone": "shoes", "name": "Сандалии"}]}]}, "dash": {"chilanzar": {"branch": {"id": "chilanzar", "name": "Чиланзар (пилот)", "open": "10:00", "close": "22:00"}, "date": "2026-10-23", "is_today": true, "generated_at": 1792769590.3827152, "visitors": {"total": 266, "in_store": 10, "last_week_same_time": 273, "change_pct": -2.6, "peak_hour": 20, "last_entry_ts": 1792769588.7690244, "hourly": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 10, 21, 24, 19, 25, 26, 29, 33, 31, 44, 0, 0, 0], "hourly_last_week": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 17, 26, 24, 17, 22, 20, 34, 40, 47, 35, 29, 0, 0], "trend": [{"date": "2026-10-10", "visitors": 418}, {"date": "2026-10-11", "visitors": 419}, {"date": "2026-10-12", "visitors": 292}, {"date": "2026-10-13", "visitors": 269}, {"date": "2026-10-14", "visitors": 310}, {"date": "2026-10-15", "visitors": 303}, {"date": "2026-10-16", "visitors": 317}, {"date": "2026-10-17", "visitors": 390}, {"date": "2026-10-18", "visitors": 402}, {"date": "2026-10-19", "visitors": 282}, {"date": "2026-10-20", "visitors": 313}, {"date": "2026-10-21", "visitors": 309}, {"date": "2026-10-22", "visitors": 290}, {"date": "2026-10-23", "visitors": 266}]}, "consultations": {"customers": 445, "served_pct": 62, "avg_wait_sec": 139, "avg_duration_sec": 154}, "zones": [{"id": "newborn", "name": "Новорождённые", "x": 2, "y": 2, "w": 30, "h": 44, "visits": 74, "avg_dwell_sec": 254, "share_pct": 28, "customers": 73, "unserved_pct": 26, "avg_wait_sec": 136}, {"id": "girls", "name": "Девочки", "x": 34, "y": 2, "w": 32, "h": 44, "visits": 91, "avg_dwell_sec": 208, "share_pct": 34, "customers": 90, "unserved_pct": 29, "avg_wait_sec": 149}, {"id": "boys", "name": "Мальчики", "x": 68, "y": 2, "w": 30, "h": 44, "visits": 78, "avg_dwell_sec": 174, "share_pct": 29, "customers": 76, "unserved_pct": 36, "avg_wait_sec": 132}, {"id": "toys", "name": "Игрушки", "x": 2, "y": 50, "w": 40, "h": 46, "visits": 97, "avg_dwell_sec": 234, "share_pct": 36, "customers": 96, "unserved_pct": 51, "avg_wait_sec": 134}, {"id": "shoes", "name": "Обувь", "x": 44, "y": 50, "w": 26, "h": 46, "visits": 65, "avg_dwell_sec": 143, "share_pct": 24, "customers": 65, "unserved_pct": 52, "avg_wait_sec": 142}, {"id": "school", "name": "Школа", "x": 72, "y": 50, "w": 26, "h": 46, "visits": 46, "avg_dwell_sec": 139, "share_pct": 17, "customers": 45, "unserved_pct": 36, "avg_wait_sec": 142}], "shelves": [{"id": "nb-1", "zone": "newborn", "name": "Боди и слипы", "zone_name": "Новорождённые", "status": "full", "since": 1792769501.3445714}, {"id": "nb-2", "zone": "newborn", "name": "Пелёнки", "zone_name": "Новорождённые", "status": "full", "since": 1792769501.3445714}, {"id": "g-1", "zone": "girls", "name": "Платья", "zone_name": "Девочки", "status": "empty", "since": 1792769547.3194618}, {"id": "g-2", "zone": "girls", "name": "Футболки", "zone_name": "Девочки", "status": "full", "since": 1792749600.0}, {"id": "b-1", "zone": "boys", "name": "Джинсы", "zone_name": "Мальчики", "status": "full", "since": 1792769501.3445714}, {"id": "b-2", "zone": "boys", "name": "Куртки", "zone_name": "Мальчики", "status": "full", "since": 1792558800.0}, {"id": "t-1", "zone": "toys", "name": "Конструкторы", "zone_name": "Игрушки", "status": "low", "since": 1792769501.3445714}, {"id": "t-2", "zone": "toys", "name": "Мягкие игрушки", "zone_name": "Игрушки", "status": "full", "since": 1792756800.0}, {"id": "s-1", "zone": "shoes", "name": "Кроссовки", "zone_name": "Обувь", "status": "full", "since": 1792762200.0}, {"id": "sc-1", "zone": "school", "name": "Рюкзаки", "zone_name": "Школа", "status": "full", "since": 1792735200.0}], "cameras": [{"id": "entrance", "name": "Вход", "role": "entrance", "last_seen": 1792769589.4654393, "online": true}, {"id": "hall", "name": "Зал", "role": "hall", "last_seen": 1792769589.636266, "online": true}, {"id": "shelves", "name": "Полки", "role": "shelves", "last_seen": 1792769561.6142292, "online": true}], "last_report": {"ts": 1792769547.4807007, "kind": "daily", "text": "📊 Отчёт · Чиланзар (пилот) · 2026-10-23\n\nПосетителей: 259 (-5.1% к прошлой неделе).\nЧас пик: 20:00–21:00.\nСамый популярный отдел: Игрушки (36% посетителей, в среднем 3.9 мин).\nКонсультацию получили 62% покупателей, ожидание продавца 2.3 мин.\nЧаще всего без консультации уходят в отделе Игрушки (52%).\nПустые полки: Девочки: Платья."}}, "yunusabad": {"branch": {"id": "yunusabad", "name": "Юнусабад", "open": "10:00", "close": "22:00"}, "date": "2026-10-23", "is_today": true, "generated_at": 1792769590.3946676, "visitors": {"total": 208, "in_store": 5, "last_week_same_time": 196, "change_pct": 6.1, "peak_hour": 18, "last_entry_ts": 1792769564.7171896, "hourly": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 10, 17, 22, 18, 9, 23, 21, 31, 25, 21, 0, 0, 0], "hourly_last_week": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 10, 17, 18, 13, 12, 20, 25, 26, 31, 33, 10, 0, 0], "trend": [{"date": "2026-10-10", "visitors": 286}, {"date": "2026-10-11", "visitors": 259}, {"date": "2026-10-12", "visitors": 206}, {"date": "2026-10-13", "visitors": 200}, {"date": "2026-10-14", "visitors": 208}, {"date": "2026-10-15", "visitors": 217}, {"date": "2026-10-16", "visitors": 222}, {"date": "2026-10-17", "visitors": 266}, {"date": "2026-10-18", "visitors": 309}, {"date": "2026-10-19", "visitors": 229}, {"date": "2026-10-20", "visitors": 229}, {"date": "2026-10-21", "visitors": 197}, {"date": "2026-10-22", "visitors": 216}, {"date": "2026-10-23", "visitors": 208}]}, "consultations": {"customers": 368, "served_pct": 61, "avg_wait_sec": 140, "avg_duration_sec": 145}, "zones": [{"id": "newborn", "name": "Новорождённые", "x": 2, "y": 2, "w": 46, "h": 30, "visits": 89, "avg_dwell_sec": 251, "share_pct": 43, "customers": 88, "unserved_pct": 23, "avg_wait_sec": 144}, {"id": "girls", "name": "Девочки", "x": 52, "y": 2, "w": 46, "h": 30, "visits": 69, "avg_dwell_sec": 213, "share_pct": 33, "customers": 69, "unserved_pct": 32, "avg_wait_sec": 140}, {"id": "boys", "name": "Мальчики", "x": 52, "y": 36, "w": 46, "h": 30, "visits": 72, "avg_dwell_sec": 165, "share_pct": 35, "customers": 72, "unserved_pct": 46, "avg_wait_sec": 147}, {"id": "toys", "name": "Игрушки", "x": 2, "y": 36, "w": 46, "h": 60, "visits": 92, "avg_dwell_sec": 235, "share_pct": 44, "customers": 91, "unserved_pct": 58, "avg_wait_sec": 128}, {"id": "shoes", "name": "Обувь", "x": 52, "y": 70, "w": 46, "h": 26, "visits": 50, "avg_dwell_sec": 139, "share_pct": 24, "customers": 48, "unserved_pct": 35, "avg_wait_sec": 139}], "shelves": [{"id": "nb-1", "zone": "newborn", "name": "Боди и слипы", "zone_name": "Новорождённые", "status": "full", "since": 1792755000.0}, {"id": "g-1", "zone": "girls", "name": "Платья", "zone_name": "Девочки", "status": "full", "since": 1792760400.0}, {"id": "b-1", "zone": "boys", "name": "Джинсы", "zone_name": "Мальчики", "status": "full", "since": 1792769501.3445714}, {"id": "t-1", "zone": "toys", "name": "Конструкторы", "zone_name": "Игрушки", "status": "full", "since": 1792762200.0}, {"id": "t-2", "zone": "toys", "name": "Куклы", "zone_name": "Игрушки", "status": "empty", "since": 1792769546.5515604}, {"id": "s-1", "zone": "shoes", "name": "Сандалии", "zone_name": "Обувь", "status": "full", "since": 1792769400.0}], "cameras": [{"id": "entrance", "name": "Вход", "role": "entrance", "last_seen": 1792769586.2988734, "online": true}, {"id": "hall", "name": "Зал", "role": "hall", "last_seen": 1792769588.025357, "online": true}, {"id": "shelves", "name": "Полки", "role": "shelves", "last_seen": 1792769561.6142292, "online": true}], "last_report": {"ts": 1792769547.4913447, "kind": "daily", "text": "📊 Отчёт · Юнусабад · 2026-10-23\n\nПосетителей: 204 (+4.1% к прошлой неделе).\nЧас пик: 18:00–19:00.\nСамый популярный отдел: Игрушки (44% посетителей, в среднем 3.9 мин).\nКонсультацию получили 61% покупателей, ожидание продавца 2.3 мин.\nЧаще всего без консультации уходят в отделе Игрушки (58%).\nПустые полки: Игрушки: Куклы."}}}};</script>
+<style>
+body{margin:0}[hidden]{display:none!important}
+/* Layout: sticky control bar → summary strip → two-column analytics grid (traffic | floor heatmap) → detail row → AI report. Stacks to one column on phones. */
+:root {
+  --bg: #f4f6f8;
+  --panel: #ffffff;
+  --ink: #142030;
+  --ink-2: #4b5768;
+  --ink-3: #7b8696;
+  --line: #e1e6ec;
+  --grid: #edf0f4;
+  --accent: #2a78d6;
+  --accent-soft: #e3eefb;
+  --ghost: #b9c2cd;
+  --good: #0ca30c; --warn: #fab219; --serious: #ec835a; --crit: #d03b3b;
+  --good-ink: #0a6e0a; --warn-ink: #8a5a00; --crit-ink: #b02a2a;
+  --zone-ink-lo: #142030; --zone-ink-hi: #ffffff;
+  --seq-1: #cde2fb; --seq-2: #9ec5f4; --seq-3: #6da7ec; --seq-4: #3987e5; --seq-5: #256abf; --seq-6: #184f95;
+  --f-display: "Unbounded", "Arial Black", system-ui, sans-serif;
+  --f-body: "Onest", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #11161d; --panel: #18202a; --ink: #eef2f6; --ink-2: #b6c0cc; --ink-3: #8592a2;
+  --line: #2a3542; --grid: #222c37; --accent: #3987e5; --accent-soft: #1d3150; --ghost: #4c5867;
+  --good-ink: #4cc94c; --warn-ink: #fab219; --crit-ink: #ef7a7a;
+  --zone-ink-lo: #eef2f6; --zone-ink-hi: #0d1a2a;
+  --seq-1: #1d3150; --seq-2: #184f95; --seq-3: #1c5cab; --seq-4: #2a78d6; --seq-5: #5598e7; --seq-6: #9ec5f4;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #11161d; --panel: #18202a; --ink: #eef2f6; --ink-2: #b6c0cc; --ink-3: #8592a2;
+  --line: #2a3542; --grid: #222c37; --accent: #3987e5; --accent-soft: #1d3150; --ghost: #4c5867;
+  --good-ink: #4cc94c; --warn-ink: #fab219; --crit-ink: #ef7a7a;
+  --zone-ink-lo: #eef2f6; --zone-ink-hi: #0d1a2a;
+  --seq-1: #1d3150; --seq-2: #184f95; --seq-3: #1c5cab; --seq-4: #2a78d6; --seq-5: #5598e7; --seq-6: #9ec5f4;
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 14px; line-height: 1.45; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--panel); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* ── Top bar ── */
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--panel); border-bottom: 1px solid var(--line); }
+header .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; padding-block: 12px; }
+.brand { display: flex; align-items: baseline; gap: 10px; margin-right: auto; }
+.brand b { font-family: var(--f-display); font-weight: 700; font-size: 17px; letter-spacing: -.01em; }
+.brand span { color: var(--ink-3); font-size: 13px; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+select, input[type=date] { font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; min-height: 36px; }
+select:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.live { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-2); font-family: var(--f-mono); }
+.live i { width: 8px; height: 8px; border-radius: 50%; background: var(--good); box-shadow: 0 0 0 0 color-mix(in srgb, var(--good) 60%, transparent); animation: pulse 2s infinite; }
+.live.off i { background: var(--ghost); animation: none; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 7px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+@media (prefers-reduced-motion: reduce) { .live i { animation: none; } }
+.chip { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; padding: 3px 8px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); }
+
+main { padding-block: 22px 40px; display: grid; gap: 18px; }
+
+/* ── Summary strip ── */
+.summary { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); }
+.kpi { padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.kpi + .kpi { border-left: 1px solid var(--line); }
+.kpi .lbl { font-size: 12px; color: var(--ink-2); }
+.kpi .val { font-family: var(--f-display); font-weight: 500; font-size: 26px; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.kpi.hero .val { font-size: 44px; font-weight: 700; line-height: 1.05; }
+.kpi .sub { font-size: 12px; color: var(--ink-3); }
+.delta { font-family: var(--f-mono); font-size: 12px; font-weight: 500; }
+.delta.up { color: var(--good-ink); } .delta.down { color: var(--crit-ink); }
+.kpi.alert .val { color: var(--crit-ink); }
+
+/* ── Panels ── */
+.grid2 { display: grid; grid-template-columns: 1.15fr 1fr; gap: 18px; }
+.grid3 { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 18px; align-items: start; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 16px 18px 18px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.ph { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.ph h2 { margin: 0; font-size: 15px; font-weight: 600; text-wrap: balance; }
+.ph .note { font-size: 12px; color: var(--ink-3); }
+.legend { display: flex; gap: 14px; font-size: 12px; color: var(--ink-2); flex-wrap: wrap; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.sw.line { height: 2px; width: 14px; border-radius: 1px; }
+svg { display: block; width: 100%; height: auto; overflow: visible; }
+svg text { font-family: var(--f-mono); font-size: 11px; fill: var(--ink-3); }
+.hit { fill: transparent; cursor: default; }
+
+/* ── Floor plan heatmap ── */
+.floor { position: relative; aspect-ratio: 16 / 11; max-width: 100%; border: 1.5px solid var(--ink-3); border-radius: 6px; background: var(--bg); }
+.floor .door { position: absolute; bottom: -2px; left: 44%; width: 12%; height: 4px; background: var(--panel); border-left: 2px solid var(--ink-3); border-right: 2px solid var(--ink-3); }
+.floor .door::after { content: "вход"; position: absolute; top: 6px; left: 50%; transform: translateX(-50%); font-size: 10px; color: var(--ink-3); font-family: var(--f-mono); }
+.zone { position: absolute; border-radius: 5px; padding: 8px 9px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; border: 2px solid var(--panel); transition: transform .15s; }
+.zone:hover { transform: scale(1.015); z-index: 2; }
+.zone .zn { font-weight: 600; font-size: 13px; line-height: 1.15; }
+.zone .zv { font-family: var(--f-display); font-size: 20px; font-weight: 500; letter-spacing: -.02em; }
+.zone .zm { font-size: 11px; font-family: var(--f-mono); opacity: .85; }
+.zone.hi { color: var(--zone-ink-hi); }
+.zone.lo { color: var(--zone-ink-lo); }
+.scale { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-3); }
+.scale .bar { display: flex; height: 8px; flex: 0 0 120px; border-radius: 4px; overflow: hidden; }
+.scale .bar i { flex: 1; }
+
+/* ── Lists ── */
+.rows { display: grid; gap: 10px; }
+.row { display: grid; grid-template-columns: 112px 1fr 56px; align-items: center; gap: 10px; font-size: 13px; }
+.row .track { height: 10px; background: var(--grid); border-radius: 0 4px 4px 0; position: relative; }
+.row .fill { position: absolute; inset: 0 auto 0 0; background: var(--accent); border-radius: 0 4px 4px 0; }
+.row .num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; color: var(--ink-2); }
+.row.worst .fill { background: var(--serious); }
+.row.worst .nm::after { content: " ▲"; color: var(--serious); font-size: 10px; }
+.shelves { display: grid; gap: 2px; }
+.shelf { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--grid); font-size: 13px; }
+.shelf:last-child { border-bottom: 0; }
+.shelf small { display: block; color: var(--ink-3); font-size: 11px; }
+.pill { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; padding: 2px 9px 2px 7px; border-radius: 99px; white-space: nowrap; }
+.pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.pill.full { color: var(--good-ink); background: color-mix(in srgb, var(--good) 12%, transparent); }
+.pill.low { color: var(--warn-ink); background: color-mix(in srgb, var(--warn) 16%, transparent); }
+.pill.empty { color: var(--crit-ink); background: color-mix(in srgb, var(--crit) 13%, transparent); }
+.pill.unknown { color: var(--ink-3); background: var(--grid); }
+.cams { display: flex; flex-wrap: wrap; gap: 8px; }
+.cam { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; border: 1px solid var(--line); border-radius: 8px; padding: 5px 9px; }
+.cam i { width: 7px; height: 7px; border-radius: 50%; }
+.cam.on i { background: var(--good); } .cam.off i { background: var(--crit); }
+.cam.off { color: var(--crit-ink); }
+
+.report { white-space: pre-wrap; font-size: 14px; line-height: 1.6; max-width: 72ch; color: var(--ink); margin: 0; }
+.report-meta { font-size: 12px; color: var(--ink-3); font-family: var(--f-mono); }
+.empty-note { color: var(--ink-3); font-size: 13px; }
+
+#tip { position: fixed; pointer-events: none; z-index: 20; background: var(--ink); color: var(--panel); font-size: 12px; padding: 6px 9px; border-radius: 6px; font-family: var(--f-mono); white-space: nowrap; opacity: 0; transition: opacity .1s; }
+#tip.on { opacity: 1; }
+footer { color: var(--ink-3); font-size: 12px; padding-bottom: 28px; }
+
+@media (max-width: 980px) {
+  .summary { grid-template-columns: repeat(2, 1fr); }
+  .kpi.hero { grid-column: 1 / -1; }
+  .kpi + .kpi { border-left: 0; }
+  .kpi { border-top: 1px solid var(--line); }
+  .kpi.hero { border-top: 0; }
+  .kpi:nth-child(odd):not(.hero) { border-left: 1px solid var(--line); }
+  .grid2, .grid3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .kpi.hero .val { font-size: 38px; }
+  .kpi .val { font-size: 22px; }
+  .zone .zv { font-size: 16px; }
+  .zone .zm { display: none; }
+  .row { grid-template-columns: 96px 1fr 48px; }
+}
+</style>
+
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand"><b>StoreSense</b><span id="company">Mittivoy</span></div>
+    <div class="controls">
+      <select id="branch" aria-label="Филиал"></select>
+      <input type="date" id="day" aria-label="Дата">
+      <span class="live" id="live"><i></i><span id="liveText">обновлено</span></span>
+      <span class="chip" id="demoChip" hidden>демо-данные</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<main>
+  <section class="summary" aria-label="Итоги дня">
+    <div class="kpi hero">
+      <span class="lbl">Посетителей за день</span>
+      <span class="val" id="kVisitors">—</span>
+      <span class="sub"><span class="delta" id="kDelta"></span> <span id="kDeltaNote"></span></span>
+    </div>
+    <div class="kpi"><span class="lbl">Сейчас в магазине</span><span class="val" id="kInStore">—</span><span class="sub" id="kPeak"></span></div>
+    <div class="kpi"><span class="lbl">Получили консультацию</span><span class="val" id="kServed">—</span><span class="sub" id="kServedSub"></span></div>
+    <div class="kpi"><span class="lbl">Ожидание продавца</span><span class="val" id="kWait">—</span><span class="sub" id="kWaitSub"></span></div>
+    <div class="kpi" id="kShelvesBox"><span class="lbl">Пустые полки</span><span class="val" id="kShelves">—</span><span class="sub" id="kShelvesSub"></span></div>
+  </section>
+
+  <div class="grid2">
+    <section class="panel">
+      <div class="ph"><h2>Посетители по часам</h2>
+        <div class="legend"><span><i class="sw" style="background:var(--accent)"></i><span id="lgToday">Сегодня</span></span><span><i class="sw line" style="background:var(--ink-2)"></i>Неделю назад</span></div>
+      </div>
+      <svg id="hourly" viewBox="0 0 560 250" role="img" aria-label="Посетители по часам"></svg>
+    </section>
+    <section class="panel">
+      <div class="ph"><h2>Горячие зоны</h2>
+        <div class="scale"><span>меньше</span><span class="bar"><i style="background:var(--seq-1)"></i><i style="background:var(--seq-2)"></i><i style="background:var(--seq-3)"></i><i style="background:var(--seq-4)"></i><i style="background:var(--seq-5)"></i><i style="background:var(--seq-6)"></i></span><span>больше</span></div>
+      </div>
+      <div class="floor" id="floor"><div class="door"></div></div>
+      <div class="note ph"><span class="note">Цифра — посещений отдела за день, ниже — среднее время в зоне и доля посетителей.</span></div>
+    </section>
+  </div>
+
+  <div class="grid3">
+    <section class="panel">
+      <div class="ph"><h2>Ушли без консультации</h2><span class="note">по отделам, % покупателей</span></div>
+      <div class="rows" id="consult"></div>
+      <div class="note" id="consultNote" style="font-size:12px;color:var(--ink-3)"></div>
+    </section>
+    <section class="panel">
+      <div class="ph"><h2>Полки</h2><span class="note" id="shelvesNote"></span></div>
+      <div class="shelves" id="shelves"></div>
+    </section>
+    <section class="panel">
+      <div class="ph"><h2>Посетители за 14 дней</h2></div>
+      <svg id="trend" viewBox="0 0 360 170" role="img" aria-label="Посетители за 14 дней"></svg>
+      <div class="ph"><h2>Камеры</h2></div>
+      <div class="cams" id="cams"></div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <div class="ph"><h2>Последний отчёт в Telegram</h2><span class="report-meta" id="repMeta"></span></div>
+    <p class="report" id="report"></p>
+  </section>
+
+  <footer>Только обезличенные цифры: видео и лица не сохраняются. Данные обновляются каждые 30 секунд.</footer>
+</main>
+</div>
+<div id="tip" role="tooltip"></div>
+
+<script>
+(() => {
+  const DEMO = window.__DEMO__ || null;
+  const $ = (id) => document.getElementById(id);
+  const NS = "http://www.w3.org/2000/svg";
+  const nf = new Intl.NumberFormat("ru-RU");
+  const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+                  set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
+  let cfg = null, timer = null;
+
+  const mins = (s) => s ? (s / 60).toLocaleString("ru-RU", { maximumFractionDigits: 1 }) + " мин" : "—";
+  const pct = (v) => v == null ? "—" : v + "%";
+  const el = (tag, attrs = {}, parent) => {
+    const n = document.createElementNS(NS, tag);
+    for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+    if (parent) parent.appendChild(n);
+    return n;
+  };
+  // Ось: «круглый» шаг, все подписи — целые числа
+  const niceMax = (v, ticks = 4) => {
+    const raw = Math.max(1, v) / ticks, p = Math.pow(10, Math.floor(Math.log10(raw)));
+    const step = [1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10].map(m => m * p).find(s => s >= raw);
+    return Math.max(ticks, Math.ceil(step) * ticks);
+  };
+
+  /* ── tooltip ── */
+  const tip = $("tip");
+  const showTip = (e, text) => {
+    tip.textContent = text; tip.classList.add("on");
+    const x = Math.min(e.clientX + 12, window.innerWidth - tip.offsetWidth - 8);
+    tip.style.left = x + "px"; tip.style.top = (e.clientY - 34) + "px";
+  };
+  const hideTip = () => tip.classList.remove("on");
+
+  /* ── hourly chart: bars = selected day, line = same weekday last week ── */
+  function drawHourly(d) {
+    const svg = $("hourly"); svg.replaceChildren();
+    const W = 560, H = 250, L = 34, R = 8, T = 10, B = 26;
+    const open = parseInt((d.branch.open || "10:00").slice(0, 2)), close = parseInt((d.branch.close || "22:00").slice(0, 2));
+    const hrs = []; for (let h = open; h < close; h++) hrs.push(h);
+    const today = d.visitors.hourly, lw = d.visitors.hourly_last_week;
+    const max = niceMax(Math.max(1, ...hrs.map(h => Math.max(today[h], lw[h]))));
+    const y = (v) => T + (H - T - B) * (1 - v / max);
+    const bw = (W - L - R) / hrs.length;
+    for (let i = 0; i <= 4; i++) {
+      const v = max / 4 * i, yy = y(v);
+      el("line", { x1: L, x2: W - R, y1: yy, y2: yy, stroke: i ? "var(--grid)" : "var(--ghost)", "stroke-width": 1 }, svg);
+      const t = el("text", { x: L - 6, y: yy + 4, "text-anchor": "end" }, svg); t.textContent = nf.format(v);
+    }
+    const nowH = d.is_today ? new Date().getHours() : 99;
+    hrs.forEach((h, i) => {
+      const x = L + i * bw + 3, w = bw - 6, v = today[h];
+      if (v > 0) {
+        const top = y(v), r = Math.min(4, w / 2, y(0) - top);
+        el("path", { d: `M${x},${y(0)} V${top + r} Q${x},${top} ${x + r},${top} H${x + w - r} Q${x + w},${top} ${x + w},${top + r} V${y(0)} Z`,
+          fill: "var(--accent)", opacity: h > nowH ? .35 : 1 }, svg);
+      }
+      if (i % (bw < 30 ? 2 : 1) === 0) { const t = el("text", { x: x + w / 2, y: H - 8, "text-anchor": "middle" }, svg); t.textContent = h + ":00"; }
+    });
+    const pts = hrs.map((h, i) => [L + i * bw + bw / 2, y(lw[h])]);
+    el("polyline", { points: pts.map(p => p.join(",")).join(" "), fill: "none", stroke: "var(--ink-2)", "stroke-width": 2, "stroke-linejoin": "round", "stroke-dasharray": "4 3" }, svg);
+    hrs.forEach((h, i) => {
+      const hit = el("rect", { class: "hit", x: L + i * bw, y: T, width: bw, height: H - T - B }, svg);
+      hit.addEventListener("mousemove", (e) => showTip(e, `${h}:00–${h + 1}:00 · ${today[h]} чел. · неделю назад ${lw[h]}`));
+      hit.addEventListener("mouseleave", hideTip);
+    });
+  }
+
+  /* ── 14-day trend ── */
+  function drawTrend(d) {
+    const svg = $("trend"); svg.replaceChildren();
+    const W = 360, H = 170, L = 34, R = 10, T = 10, B = 24;
+    const pts = d.visitors.trend, max = niceMax(Math.max(1, ...pts.map(p => p.visitors)), 2);
+    const x = (i) => L + (W - L - R) * i / (pts.length - 1), y = (v) => T + (H - T - B) * (1 - v / max);
+    for (let i = 0; i <= 2; i++) {
+      const v = max / 2 * i;
+      el("line", { x1: L, x2: W - R, y1: y(v), y2: y(v), stroke: i ? "var(--grid)" : "var(--ghost)" }, svg);
+      const t = el("text", { x: L - 6, y: y(v) + 4, "text-anchor": "end" }, svg); t.textContent = nf.format(v);
+    }
+    const line = pts.map((p, i) => `${x(i)},${y(p.visitors)}`).join(" ");
+    el("polygon", { points: `${x(0)},${y(0)} ${line} ${x(pts.length - 1)},${y(0)}`, fill: "var(--accent)", opacity: .12 }, svg);
+    el("polyline", { points: line, fill: "none", stroke: "var(--accent)", "stroke-width": 2, "stroke-linejoin": "round" }, svg);
+    const last = pts[pts.length - 1];
+    el("circle", { cx: x(pts.length - 1), cy: y(last.visitors), r: 4.5, fill: "var(--accent)", stroke: "var(--panel)", "stroke-width": 2 }, svg);
+    const fmt = (s) => { const [, m, dd] = s.split("-"); return `${+dd}.${m}`; };
+    [0, 7, pts.length - 1].forEach(i => { const t = el("text", { x: x(i), y: H - 6, "text-anchor": i === 0 ? "start" : i === pts.length - 1 ? "end" : "middle" }, svg); t.textContent = fmt(pts[i].date); });
+    const days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+    pts.forEach((p, i) => {
+      const w = (W - L - R) / (pts.length - 1);
+      const hit = el("rect", { class: "hit", x: x(i) - w / 2, y: T, width: w, height: H - T - B }, svg);
+      hit.addEventListener("mousemove", (e) => showTip(e, `${fmt(p.date)} (${days[new Date(p.date + "T12:00").getDay()]}) · ${nf.format(p.visitors)} чел.`));
+      hit.addEventListener("mouseleave", hideTip);
+    });
+  }
+
+  /* ── floor plan heatmap ── */
+  function drawFloor(d) {
+    const floor = $("floor"); floor.querySelectorAll(".zone").forEach(n => n.remove());
+    const vals = d.zones.map(z => z.visits), max = Math.max(...vals), min = Math.min(...vals);
+    d.zones.forEach(z => {
+      const lvl = max === min ? 3 : 1 + Math.round((z.visits - min) / (max - min) * 5);
+      const div = document.createElement("div");
+      div.className = "zone " + (lvl >= 4 ? "hi" : "lo");
+      Object.assign(div.style, { left: z.x + "%", top: z.y + "%", width: z.w + "%", height: z.h + "%", background: `var(--seq-${lvl})` });
+      div.innerHTML = `<span class="zn"></span><span><span class="zv"></span><br><span class="zm"></span></span>`;
+      div.querySelector(".zn").textContent = z.name;
+      div.querySelector(".zv").textContent = nf.format(z.visits);
+      div.querySelector(".zm").textContent = `${mins(z.avg_dwell_sec)} · ${z.share_pct}%`;
+      div.addEventListener("mousemove", (e) => showTip(e, `${z.name}: ${z.visits} посещ., ${z.share_pct}% посетителей, ${mins(z.avg_dwell_sec)} в зоне`));
+      div.addEventListener("mouseleave", hideTip);
+      floor.appendChild(div);
+    });
+  }
+
+  function drawConsult(d) {
+    const box = $("consult"); box.replaceChildren();
+    const zones = [...d.zones].sort((a, b) => b.unserved_pct - a.unserved_pct);
+    const worst = zones[0];
+    zones.forEach(z => {
+      const r = document.createElement("div");
+      r.className = "row" + (z === worst && z.unserved_pct > 0 ? " worst" : "");
+      r.innerHTML = `<span class="nm"></span><span class="track"><span class="fill"></span></span><span class="num"></span>`;
+      r.querySelector(".nm").textContent = z.name;
+      r.querySelector(".fill").style.width = z.unserved_pct + "%";
+      r.querySelector(".num").textContent = z.unserved_pct + "%";
+      r.addEventListener("mousemove", (e) => showTip(e, `${z.name}: ${z.customers} покуп., ждали продавца ~${mins(z.avg_wait_sec)}`));
+      r.addEventListener("mouseleave", hideTip);
+      box.appendChild(r);
+    });
+    $("consultNote").textContent = worst && worst.unserved_pct > 0
+      ? `Больше всего без внимания остаются в отделе «${worst.name}». Средняя консультация длится ${mins(d.consultations.avg_duration_sec)}.` : "";
+  }
+
+  function drawShelves(d) {
+    const box = $("shelves"); box.replaceChildren();
+    const label = { full: "полная", low: "мало", empty: "пустая", unknown: "нет данных" };
+    const order = { empty: 0, low: 1, unknown: 2, full: 3 };
+    [...d.shelves].sort((a, b) => order[a.status] - order[b.status]).forEach(s => {
+      const r = document.createElement("div"); r.className = "shelf";
+      r.innerHTML = `<span><span class="sn"></span><small></small></span><span class="pill ${s.status}"></span>`;
+      r.querySelector(".sn").textContent = s.name;
+      r.querySelector("small").textContent = s.zone_name;
+      r.querySelector(".pill").textContent = label[s.status];
+      box.appendChild(r);
+    });
+    const low = d.shelves.filter(s => s.status === "low").length;
+    $("shelvesNote").textContent = low ? `заканчиваются: ${low}` : "проверка каждые 15 мин";
+  }
+
+  function drawCams(d) {
+    const box = $("cams"); box.replaceChildren();
+    d.cameras.forEach(c => {
+      const s = document.createElement("span"); s.className = "cam " + (c.online ? "on" : "off");
+      s.innerHTML = "<i></i><span></span>"; s.querySelector("span").textContent = c.name + (c.online ? "" : " — нет связи");
+      box.appendChild(s);
+    });
+  }
+
+  function render(d) {
+    const v = d.visitors, c = d.consultations;
+    $("kVisitors").textContent = nf.format(v.total);
+    const dl = $("kDelta");
+    if (v.change_pct != null) {
+      dl.textContent = (v.change_pct >= 0 ? "▲ +" : "▼ ") + v.change_pct.toLocaleString("ru-RU") + "%";
+      dl.className = "delta " + (v.change_pct >= 0 ? "up" : "down");
+      $("kDeltaNote").textContent = d.is_today ? `к тому же времени неделю назад (${nf.format(v.last_week_same_time)})` : `к этому дню неделю назад (${nf.format(v.last_week_same_time)})`;
+    } else { dl.textContent = ""; $("kDeltaNote").textContent = "нет данных за прошлую неделю"; }
+    $("kInStore").textContent = d.is_today ? nf.format(v.in_store) : "—";
+    $("kPeak").textContent = v.peak_hour != null ? `пик ${v.peak_hour}:00–${v.peak_hour + 1}:00` : "";
+    $("kServed").textContent = pct(c.served_pct);
+    $("kServedSub").textContent = `из ${nf.format(c.customers)} подходов к отделам`;
+    $("kWait").textContent = mins(c.avg_wait_sec);
+    $("kWaitSub").textContent = `консультация ~${mins(c.avg_duration_sec)}`;
+    const empty = d.shelves.filter(s => s.status === "empty");
+    $("kShelves").textContent = empty.length;
+    $("kShelvesBox").classList.toggle("alert", empty.length > 0);
+    $("kShelvesSub").textContent = empty.length ? empty.map(s => s.name).join(", ") : "всё выложено";
+    $("lgToday").textContent = d.is_today ? "Сегодня" : d.date.split("-").reverse().join(".");
+
+    drawHourly(d); drawFloor(d); drawConsult(d); drawShelves(d); drawTrend(d); drawCams(d);
+
+    const rep = d.last_report;
+    $("report").textContent = rep ? rep.text : "Отчёт ещё не сформирован. Он придёт в Telegram и появится здесь в настроенное время.";
+    $("report").classList.toggle("empty-note", !rep);
+    $("repMeta").textContent = rep ? new Date(rep.ts * 1000).toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }) : "";
+    const t = new Date(d.generated_at * 1000).toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit" });
+    $("liveText").textContent = (d.is_today ? "обновлено " : "архив · ") + t;
+    $("live").classList.toggle("off", !d.is_today);
+  }
+
+  /* ── data ── */
+  async function getJSON(url) {
+    const r = await fetch(url, { cache: "no-store" });
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
+  }
+  async function load() {
+    const b = $("branch").value, day = $("day").value;
+    try {
+      const d = DEMO ? DEMO.dash[b] : await getJSON(`/api/dashboard?branch=${encodeURIComponent(b)}${day ? "&date=" + day : ""}`);
+      render(d);
+    } catch (e) {
+      $("liveText").textContent = "нет связи с сервером, повтор через 30 с";
+      $("live").classList.add("off");
+    }
+  }
+  async function init() {
+    try { cfg = DEMO ? DEMO.config : await getJSON("/api/config"); }
+    catch { $("liveText").textContent = "сервер недоступен"; $("live").classList.add("off"); setTimeout(init, 10000); return; }
+    $("company").textContent = cfg.company || "";
+    const sel = $("branch");
+    sel.replaceChildren(...cfg.branches.map(b => new Option(b.name, b.id)));
+    const saved = store.get("ss-branch");
+    if (saved && cfg.branches.some(b => b.id === saved)) sel.value = saved;
+    const today = new Date(); const iso = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    $("day").max = iso; $("day").value = iso;
+    if (DEMO) { $("demoChip").hidden = false; $("day").disabled = true; }
+    sel.addEventListener("change", () => { store.set("ss-branch", sel.value); load(); });
+    $("day").addEventListener("change", load);
+    await load();
+    if (!DEMO) timer = setInterval(() => { if ($("day").value === $("day").max) load(); }, 30000);
+  }
+  init();
+})();
+</script>
+
+</body>
+</html>
